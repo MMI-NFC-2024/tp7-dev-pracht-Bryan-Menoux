@@ -1,21 +1,23 @@
 ---
-import PlotFigure from "../components/PlotFigure.astro";
 import Layout from "../layouts/Layout.astro";
-import * as Plot from "@observablehq/plot";
-import penguins from "../assets/penguins.json";
 ---
 
 <Layout>
-  <h1 class="text-2xl">Test Astro et Plot (Observablehq)</h1>
-  <PlotFigure
-    options={{
-      marks: [
-        Plot.dot(penguins, {
-          x: "culmen_length_mm",
-          y: "culmen_depth_mm",
-          stroke: "species",
-        }),
-      ],
-    }}
-  />
+  <div class="w-full mx-auto pt-26 max-w-3xl">
+    <h1 class="text-3xl font-semibold text-slate-900 text-center">Cartes</h1>
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <a
+        href="/leaflet"
+        class="group rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-200 hover:ring-slate-300 hover:shadow-md transition"
+      >
+        <h2 class="text-lg font-medium text-slate-900">Leaflet</h2>
+      </a>
+      <a
+        href="/geojson"
+        class="group rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-200 hover:ring-slate-300 hover:shadow-md transition"
+      >
+        <h2 class="text-lg font-medium text-slate-900">GeoJSON</h2>
+      </a>
+    </div>
+  </div>
 </Layout>
